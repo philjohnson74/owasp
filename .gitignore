@@ -1,0 +1,10 @@
+
+owasp/.idea/
+
+*/.DS_Store
+
+owasp/MvcMovie/bin/
+
+owasp/MvcMovie/obj/
+
+.DS_Store
