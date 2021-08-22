@@ -36,3 +36,7 @@ Login with the following account details:
 
 Username: Phil
 Password: Password1!
+
+Show you can't change the URL to be HTTP:
+
+http://localhost:5001/account/index

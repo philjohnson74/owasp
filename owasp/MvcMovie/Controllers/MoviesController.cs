@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -36,6 +37,11 @@ namespace MvcMovie.Controllers
                 cmd.CommandText = $"SELECT `id`, `title`, `genre` FROM `Movie` WHERE genre = '{genre}'";
                 
                 /*
+                if (genre.Length > 12)
+                    throw new Exception("Invalid Genre - Too long");
+                if (!Regex.IsMatch(genre, @"^[a-zA-Z]+$"))
+                    throw new Exception("Invalid Genre - Contains invalid characters");
+                
                 cmd.CommandText = @"SELECT `id`, `title`, `genre` FROM `Movie` WHERE genre = @genre";
                 cmd.Parameters.Add(new MySqlParameter
                 {
@@ -44,6 +50,7 @@ namespace MvcMovie.Controllers
                     Value = genre,
                 });
                 */
+                
             }
             
             var movies = await ReadAllAsync(await cmd.ExecuteReaderAsync());
