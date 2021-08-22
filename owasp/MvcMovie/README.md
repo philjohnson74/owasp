@@ -25,3 +25,14 @@ https://localhost:5001/movies?genre=Comedy%27%3Bdrop%20table%20Movie%3B
 Set the data up again and show how using a parameterised query helps guard against SQL injection.
 
 Also, mention validation and using users with least privilege can help... Security in depth.
+
+# Broken Authentication
+
+Run the web app and go to the URL:
+
+https://localhost:5001/account/index
+
+Login with the following account details:
+
+Username: Phil
+Password: Password1!
