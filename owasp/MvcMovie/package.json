@@ -1,0 +1,15 @@
+{
+  "name": "mvcmovie",
+  "version": "1.0.0",
+  "description": "Make sure you have a database set up as per in the connection string in appsettings.json. You will need a User on the DB called WebSiteUser and run the SQL from the DbCreation.SQL file to create the necessary table, data and assign permissions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^8.3.1"
+  }
+}

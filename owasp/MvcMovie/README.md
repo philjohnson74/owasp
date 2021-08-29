@@ -40,3 +40,21 @@ Password: Password1!
 Show you can't change the URL to be HTTP:
 
 http://localhost:5001/account/index
+
+Show an invalid login shows the text 'Invalid Account'.
+
+Show the cypress test (cypress/integration/brute-force-login/brute-force.spec.js).
+Explain login details would be loaded from data.
+
+Run test by:
+Running the web app.
+In a terminal, go to the MvcMovie folder.
+run "npm test" command in terminal.
+in the Cypress UI, run the test.
+
+Show how fast the test is going through invalid accounts but stops at valid login details.
+
+Show how a Backoff in the controller gradually slows down attempts.
+
+Show how a cutoff after x attempts stops a brute force attack entirely.
+

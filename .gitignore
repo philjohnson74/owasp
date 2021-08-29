@@ -8,3 +8,5 @@ owasp/MvcMovie/bin/
 owasp/MvcMovie/obj/
 
 .DS_Store
+
+owasp/MvcMovie/node_modules/
