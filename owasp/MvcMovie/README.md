@@ -26,6 +26,57 @@ Set the data up again and show how using a parameterised query helps guard again
 
 Also, mention validation and using users with least privilege can help... Security in depth.
 
+# XSS - Cross Site Scripting
+
+Go to this URL:
+
+https://localhost:5001/xss
+
+Enter some normal text and submit to show that the next page just displays the text input
+
+Now go back and enter this text to show that it runs as js when submitted:
+
+<script>alert("Boom!")</script>
+
+Show the page source and how the script element looks.
+
+Update the XSS/SubmittedText view to html encode the text...
+
+<div>@Html.Raw(Html.Encode(Context.Session.GetString("inputtext")))</div>
+
+Restart the app and put the alert in the submitted text again.
+
+Show the encoding in the source for the page.
+
+Talk about how Html.Raw should never be used with untrusted data (i.e. anything user input)
+
+Take out the encoding again so it's unsafe.
+
+Show the xssCookie in the browser.
+
+Show that you can access the cookie value using the following javascript code:
+
+<script>
+function getCookie(cookieName) {
+  let cookie = {};
+  document.cookie.split(';').forEach(function(el) {
+    let [key,value] = el.split('=');
+    cookie[key.trim()] = value;
+  });
+  return cookie[cookieName];
+}
+alert(getCookie("xssCookie"));
+</script>
+
+Show good practice if you don't need to access cookies on the client side, set to httponly and secure in XssController.
+
+Things that you can do with XSS - Anything you can do in javascript!!
+Might just be an inconvenience.
+Might not be visible.
+Inc. Changing URLs, changing submit button actions to send content to web service before doing normal submit.
+
+Remember could be input by somebody else (think Facebook or Twitter feed)
+
 # Broken Authentication
 
 Run the web app and go to the URL:

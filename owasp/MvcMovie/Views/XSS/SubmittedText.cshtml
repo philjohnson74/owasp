@@ -1,0 +1,17 @@
+@using Microsoft.AspNetCore.Http;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Submitted Text</title>
+</head>
+<body>
+
+    <h3>Display Submitted Text Page</h3>
+Input Text:
+<br>
+<div>@Html.Raw(Context.Session.GetString("inputtext"))</div>
+</body>
+</html>

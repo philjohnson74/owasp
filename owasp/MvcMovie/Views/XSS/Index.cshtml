@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <h3>XSS Page</h3>
+    @ViewBag.error
+    <form method="post" asp-controller="xss" asp-action="textsubmitted">
+        <table border="0" cellpadding="2" cellspacing="2">
+            <tr>
+                <td>Input Text</td>
+                <td><input type="text" name="inputtext"></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
