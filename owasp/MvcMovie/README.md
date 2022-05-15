@@ -109,3 +109,28 @@ Show how a Backoff in the controller gradually slows down attempts.
 
 Show how a cutoff after x attempts stops a brute force attack entirely.
 
+# Insecure Security Misconfiguration
+
+Show OWASP Top 10 - XML External Entities now merged with Security Misconfiguration.
+
+Show the different things considered to be Security Misconfiguration
+
+Security Misconfiguration can include lots or things... Firewall settings, web.config, settings in code.
+
+Show the billionlaughs.xml file and explain how it works.
+
+Some people call it an XML Bomb... small file size gets past size validation then explodes in memory when parsed.
+
+Show serverside configuration in code that exposes vulnerability in FileUploadController.cs
+
+XMLReaderSettings is where the security misconfiguration exists.
+
+This example is XML but concept is same for other more modern formats/tech.
+
+Go to https://localhost:5001/fileupload and upload the billionlaughs.xml file to show the server running out of memory
+
+Upload with just lol1 initially... get bigger until significantly noticable response time.
+
+Finally upload with Lol9 to show out of memory exception.
+
+Show memory running out if windows machine (task manager)
